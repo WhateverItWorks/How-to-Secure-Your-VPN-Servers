@@ -53,8 +53,23 @@ It say this:
 
 5. Now Connect your .ovpn config with [OpenVPN Connect](https://openvpn.net/vpn-client/)
 
+
+### By default, WireGuard logs important information about its operations to the system log files. This is useful for troubleshooting issues, but may not be desirable if you want to use the VPN anonymously. Here are steps to turn off WireGuard logs:
+
+1. Edit the WireGuard configuration file: Open your WireGuard configuration file with a text editor using administrator privileges. The location of the configuration file can vary depending on your system and how WireGuard was installed.
+
+2. Add the following lines to the configuration file: Under the [Interface] section of the configuration file, add the following two lines:
+```
+PrivateKey = omit
+SaveConfig = false
+```
+3. Save the configuration file: Save the updated configuration file and close the text editor.
+
+4. Restart WireGuard: Restart the WireGuard service to apply the changes to the configuration file. The exact command to use will vary depending on your system and how WireGuard was installed.
+
+> With these steps, WireGuard logs will be turned off and important information will no longer be recorded. However, it's still possible that some logs or traces may exist elsewhere on the system, so it's important to take other measures to ensure anonymous use of the VPN, such as using Tor or another privacy-focused technology.
+
 ### Sources
 
-[WireGuard coming soon](https://www.wireguard.com/install/)
 
 
