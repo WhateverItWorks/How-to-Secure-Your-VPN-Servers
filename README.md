@@ -69,7 +69,22 @@ SaveConfig = false
 
 > With these steps, WireGuard logs will be turned off and important information will no longer be recorded. However, it's still possible that some logs or traces may exist elsewhere on the system, so it's important to take other measures to ensure anonymous use of the VPN, such as using Tor or another privacy-focused technology.
 
-### Sources
+### To disable all logs on Pritunl on Ubuntu 20.04, you can follow these steps:
 
+Open the Pritunl configuration file for editing:
 
+```sudo nano /etc/pritunl.conf```
 
+Add the following line to the file to disable logging:
+
+```log_path = /dev/null```
+
+The ```/dev/null``` path discards all log output.
+
+Save the file and exit.
+
+Restart the Pritunl service to apply the changes:
+
+```sudo systemctl restart pritunl```
+
+That's it! You've now successfully disabled all logs on Pritunl on your Ubuntu 20.04 machine. Note that this may affect your ability to diagnose any issues with the Pritunl service, so use this option with caution.
